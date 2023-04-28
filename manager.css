@@ -1,0 +1,135 @@
+
+
+body{
+	background-image: url(mumias.PNG);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.loginbox{
+	width: 450px;
+	height: 800px;
+	background:#000;
+	color:#fff;
+	top: 0%;
+	left: 0%;
+	margin-left: 20%;
+	position: absolute;
+	transform: translate(-50%,50%);
+	box-sizing: border-box;
+	padding: 70px 50px;
+
+}
+.avatar{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -50px;
+	left: calc(50% - 50px);
+}
+h2{
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 22px;
+}
+.loginbox p{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+}
+.loginbox input{
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+.loginbox input[type="text"], input[type="employNo"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.loginbox input[type="text"], input[type="middlename"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.loginbox input[type="text"], input[type="lname"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.loginbox input[type="submit"]{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+.loginbox input[type="Reset"]{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.loginbox input[type="submit"]:hover{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+.loginbox input[type="Reset"]:hover{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+.loginbox a{
+	text-decoration: none;
+	font-size: 12px;
+	line-height: 20px;
+	color: darkgrey;
+
+}
+.loginbox a:hover{
+	color: #ffc107;
+
+}
+h1{
+	text-align: center;
+	font-weight: bold;
+	background: teal;
+	color: white;
+}
+footer{
+text-align: center;
+margin-top: 90%;
+background: gold;
+}
+.generate{
+	border-collapse: collapse;
+	align-content: center;
+	margin-left: 75%;
+	position: absolute;
+	transform: translate(-50%,50%);
+	box-sizing: border-box;
+	padding: 70px 50px;
+	background: powderblue;
+}
+

@@ -1,0 +1,134 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+
+	font-family: 'poppins', sans-serif;
+}
+.header{
+	overflow: auto;
+	display: flex;
+	background: green;
+	margin-top: 5px;
+	
+}
+ h3{
+	color: cyan;
+	margin-top: 10px;
+padding-left: 30px;
+}
+.logo img{
+	width: 60px;
+}
+h3 span{
+	color: red;
+}
+nav{
+	overflow: auto;
+	background-color: powderblue;
+} 
+nav ul{
+	float: right;
+	list-style: none;
+	width:500px;
+	margin-right: 5%;
+	padding: 10px;
+}
+nav ul li{
+	display: inline-block;
+	margin-left: 10px;
+}
+
+ul li a{
+color: #fff;
+font-size: 20px;
+text-decoration: none;
+}
+#side-bar{
+	border: 1px solid #fff;
+	width: 150px;
+	margin-left: px;
+	background: green;
+}
+#side-bar ul{
+	width: 100px;
+	list-style: none;
+	height: 104vh;
+}
+#side-bar ul li{
+padding: 30px 10px 10px 10px;
+}
+#side-bar ul li a{
+	color: white;
+	text-decoration: none;
+}
+#side-bar span{
+	color: white;
+	cursor: pointer;
+	font-size: 18px;
+	padding: 5px;
+
+}
+nav span i{
+	color: #fff;
+	padding: 10px;
+	font-size:20px;
+	font-weight: 800;
+	cursor: pointer;
+}
+.main-container{
+	background-image: url(farmer.JPG);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin-top: 20px;
+	height: 130vh;
+}
+.content{
+	max-width: 70%;
+	border: 2px solid green;
+	background: green;
+	margin-top: 5%;
+	margin-left: 5%;
+
+}
+.content p{
+color: white;
+padding: 10px;
+ word-break: break-all;
+  font-size: 18px;
+
+
+}
+.content p img{
+	width: 200px;
+	
+}
+nav ul li a i{
+	color: blue;
+	padding: 10px;
+}
+.search-box
+{
+	margin-left: 10%;
+	margin-top: 5px;
+	 max-width: 400px;
+	 border: 2px solid #ccc;
+	 border-radius: 25px;
+	 max-width: 500px;
+
+}
+.search-box input{
+	outline: none;
+	border: none;
+	padding:8px;
+	color: #fff;
+	font-size:18px ;
+	background: transparent;
+}
+footer{
+	background: gold;
+}
