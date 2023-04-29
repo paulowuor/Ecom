@@ -1,4 +1,5 @@
 <?php
+
 // Connect to the database
 $conn = mysqli_connect('localhost', 'root', '', 'farmer');
 
@@ -10,11 +11,7 @@ if (!$conn) {
 // Get the order ID and status from the AJAX request
 $orderId = $_POST['order_id'];
 $status = $_POST['status'];
-
-//get email address
-$email_address=get_farmer_email_address($orderId,$conn);
-
-
+ 
 //send email notification
 //send_email_notification_to_farmer($email_address,$message="We have successfully approved your order");
 
@@ -22,46 +19,54 @@ $email_address=get_farmer_email_address($orderId,$conn);
 $query = "UPDATE `order` SET `status` ='$status' WHERE `order`.`order_id` = $orderId";
 $result = mysqli_query($conn, $query);
 
+
+ //fetch username given order_id
+if($result){
+ $query="SELECT `username` FROM `order` WHERE `order`.`order_id` = $orderId";
+ $result = mysqli_query($conn, $query);
+
+ if($result){
+  $row = mysqli_fetch_assoc($result);
+
+  $username=$row["username"];
+  print_r($username);
+ }
+}
+
 // Check for errors
-if (!$result) {
+else {
   die('Error updating order status: ' . mysqli_error($conn));
 }
 
 
-function get_farmer_email_address($order_id='',$conn){
+function get_farmer_email_address($order_id=0,$conn){
 
   //fetch username given order_id
 
-  $query="SELECT username FROM order WHERE order_id=$orderId";
+  $query="SELECT username FROM order WHERE order_id=$order_id";
   $result = mysqli_query($conn, $query);
+
+  print_r($result);
+  $email_address='';
 
   if($result){
 
     $row = mysqli_fetch_assoc($result);
 
     $username=$row["username"];
+    
 
     //fetch email address from farmers table using username
 
 
-    $email_query="SELECT email FROM farmers WHERE username=$username";
+    $email_query="SELECT email FROM farmers WHERE username='$username'";
     $email_result = mysqli_query($conn, $email_query);
   
-    if($email_result){
-  
-      $row = mysqli_fetch_assoc($email_result);
-  
-      $email_address=$row["email"];
-  
-      //fetch email address from farmers table using username
-    }
+    
 
 
   }
 
-  print_r($email_address);
-
-  return $email_address;
 
 
 }
@@ -133,4 +138,5 @@ function get_farmer_email_address($order_id='',$conn){
   
 // // Close the database connection
 mysqli_close($conn);
+
 ?>
