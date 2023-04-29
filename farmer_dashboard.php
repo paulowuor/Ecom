@@ -220,7 +220,7 @@ color: #f05462;
             <li><a href="#" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>About Us</a></span></li>
             
             <li><a href="shop/index.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>Place order for the product</span></li>
-             <li><a href="contact.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>Contact Us</a></span></li>
+             <li><a href="pendingorder.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>View Pending Order</a></span></li>
             
              </li>
             <li><a href="#" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>Help</a></span></li>

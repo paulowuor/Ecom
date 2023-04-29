@@ -204,7 +204,11 @@ color: #f05462;
     table {
   border-collapse: collapse;
   width: 100%;
+
 }
+tr:hover {
+        background-color: green;
+    }
 
 th, td {
   text-align: left;
