@@ -10,7 +10,7 @@ if (!$conn) {
 // Get the order ID and status from the AJAX request
 $orderId = $_POST['order_id'];
 $status = $_POST['status'];
-print_r($_POST);
+
 //get email address
 //$email_address=get_farmer_email_address($orderId);
 
@@ -18,7 +18,7 @@ print_r($_POST);
 //send_email_notification_to_farmer($email_address,$message="We have successfully approved your order");
 
 // Update the order status in the database
-$query = "UPDATE order SET status = '$status' WHERE order_id= $orderId";
+$query = "UPDATE `order` SET `status` ='$status' WHERE `order`.`order_id` = $orderId";
 $result = mysqli_query($conn, $query);
 
 // Check for errors
