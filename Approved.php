@@ -57,7 +57,7 @@ function send_email($email_address=''){
                           "From"=> "geofrey.ongidi@digitalvision.co.ke",
                           "To"=> $email_address,
                           "Subject"=> "Order Approval",
-                          "HtmlBody"=> "<strong>Hello</strong> We have approved your order.",
+                          "HtmlBody"=> "<strong>Hello We are Paul De Developer company:</strong> We have approved your order.",
                           "MessageStream"=> "notifications"
                       
                   ));
