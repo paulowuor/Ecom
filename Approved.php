@@ -54,7 +54,7 @@ function send_email($email_address=''){
   //  initialize post fields
                   $post_fieds = json_encode(array(
                       
-                          "From"=> "geofrey.ongidi@digitalvision.co.ke",
+                          "From"=> "oowuor20@student.kibu.ac.ke",
                           "To"=> $email_address,
                           "Subject"=> "Order Approval",
                           "HtmlBody"=> "<strong>Hello</strong> We have approved your order.",
