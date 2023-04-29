@@ -299,7 +299,7 @@ color: #f05462;
         // display the pending orders in a table
         if (mysqli_num_rows($result) > 0) {
             echo "<table border='1'>";
-            echo "<tr><th>Order ID</th><th>Username Name</th><th>Price</th></tr>";
+            echo "<tr><th>Order ID</th><th>Username </th><th>Price</th></tr>";
             while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td>" . $row['order_id'] . "</td>";
