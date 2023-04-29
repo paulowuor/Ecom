@@ -12,7 +12,8 @@ $orderId = $_POST['order_id'];
 $status = $_POST['status'];
 
 //get email address
-//$email_address=get_farmer_email_address($orderId);
+$email_address=get_farmer_email_address($orderId,$conn);
+
 
 //send email notification
 //send_email_notification_to_farmer($email_address,$message="We have successfully approved your order");
@@ -27,41 +28,43 @@ if (!$result) {
 }
 
 
-// function get_farmer_email_address($order_id=){
+function get_farmer_email_address($order_id='',$conn){
 
-//   //fetch username given order_id
+  //fetch username given order_id
 
-//   $query="SELECT username FROM order WHERE order_id=$orderId";
-//   $result = mysqli_query($conn, $query);
+  $query="SELECT username FROM order WHERE order_id=$orderId";
+  $result = mysqli_query($conn, $query);
 
-//   if($result){
+  if($result){
 
-//     $row = mysqli_fetch_assoc($result);
+    $row = mysqli_fetch_assoc($result);
 
-//     $username=$row["username"];
+    $username=$row["username"];
 
-//     //fetch email address from farmers table using username
+    //fetch email address from farmers table using username
 
 
-//     $email_query="SELECT email FROM farmers WHERE username=$username";
-//     $email_result = mysqli_query($conn, $email_query);
+    $email_query="SELECT email FROM farmers WHERE username=$username";
+    $email_result = mysqli_query($conn, $email_query);
   
-//     if($email_result){
+    if($email_result){
   
-//       $row = mysqli_fetch_assoc($email_result);
+      $row = mysqli_fetch_assoc($email_result);
   
-//       $email_address=$row["email"];
+      $email_address=$row["email"];
   
-//       //fetch email address from farmers table using username
-//     }
+      //fetch email address from farmers table using username
+    }
 
 
-//   }
+  }
 
-//   return $email_address;
+  print_r($email_address);
+
+  return $email_address;
 
 
-// }
+}
 
 // function send_email($email_address='',$message=''){
 
