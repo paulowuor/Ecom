@@ -12,6 +12,29 @@ include("auth_session.php");
     <meta charset="utf-8">
     <title>Welcome Admin</title>
     <style>
+        .side-menu{
+    position: fixed;
+     background: #4CAF50;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    width: 10%;
+}
+.container .header{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80vw;
+    height: 10vh;
+     background: #4CAF50;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0);
+
+}
         .login-button {
   background-color: #4CAF50; /* Green background */
   border: none; /* Remove borders */
@@ -63,7 +86,7 @@ include("auth_session.php");
     
 <header>Farmer Tech lending platform</header>
   <div class="header">
-    <li><a href="admin.php" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
+    <li><a href="#" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
     <div class="nav">
     <div class="search">
  <?php

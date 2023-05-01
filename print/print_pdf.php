@@ -75,7 +75,7 @@ $header=array('order_id','username','price', 'status');
 //Data loading
 //*** Load MySQL Data ***//
 $objConnect = mysqli_connect("localhost","root","","farmer");
-$strSQL = "SELECT order_id, username, price, status FROM `order` WHERE status = 1";
+$strSQL = "SELECT order_id, username, price, status FROM `order` WHERE status ='approved'";
 $objQuery = mysqli_query($objConnect, $strSQL);
 $resultData = array();
 while ($result = mysqli_fetch_array($objQuery)) {
@@ -107,7 +107,7 @@ W, %M %d, %Y') as date");
 	$pdf->Ln();
 	
 	//count total numbers of visitors
-	$result=mysqli_query($objConnect, "Select * from `order` where status = 1") or die ("Database query failed: " . mysqli_error($objConnect));
+	$result=mysqli_query($objConnect, "Select * from `order` where status ='approved'") or die ("Database query failed: " . mysqli_error($objConnect));
 
 	
 	$count = mysqli_num_rows($result);

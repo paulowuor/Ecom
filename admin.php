@@ -67,7 +67,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-    background: green;
+  background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -75,6 +75,7 @@ h2{
     margin-top: 5%;
     width: 10%;
 }
+
 .side-menu .brand-name{
     height: 10vh;
     display: flex;
@@ -105,7 +106,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: green;
+     background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -236,7 +237,7 @@ color: #f05462;
     
 <header>Farmer Tech lending platform</header>
   <div class="header">
-    <li><a href="admin.php" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
+    <li><a href="#" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
     <div class="nav">
     <div class="search">
          <?php

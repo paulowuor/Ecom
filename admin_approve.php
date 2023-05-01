@@ -70,7 +70,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-    background: green;
+    background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -108,7 +108,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: green;
+    background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -314,12 +314,12 @@ $result = $con->query($sql) or die(mysqli_error($con));
 
 if ($result->num_rows > 0) {
         echo "<table border='1'>";
-    echo "<tr><th>Order ID</th><th>User ID</th><th>Product ID</th><th>Total Cost(Ksh.)</th><th>Action</th></tr>";
+    echo "<tr><th>Order ID</th><th>Farmer username</th><th>Total Cost(Ksh.)</th><th>Action</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>
               <td>" . $row["order_id"] . "</td>
               <td>" . $row["username"] . "</td>
-              <td>" . $row["id"] . "</td>
+              
               <td>" . $row["price"] . "</td>
               <td>
                   <button class='approve-btn' id='approve-btn-" . $row["order_id"] . "' onclick='approveOrder(" . $row["order_id"]. ")'>Approve</button>
@@ -377,6 +377,12 @@ function rejectOrder(order_id) {
     error: function() {
       // Display an error message to the user
       alert('There was an error approving the order. Please try again later.');
+      // Update the UI to reflect the new status of the order
+      $('#reject-btn-' + order_id).replaceWith('<span class="approved-text">Rejected</span>');
+    },
+    error: function() {
+      // Display an error message to the user
+      alert('There was an error rejecting the order. Please try again later.');
     }
   });
 }

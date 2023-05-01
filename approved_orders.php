@@ -67,7 +67,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-  background: #4CAF50;
+     background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -105,7 +105,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-     background: #4CAF50;
+    background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -274,7 +274,8 @@ color: #f05462;
 <div class="cover"></div>
  <h1>Farmer Lending Platform</h1>
 <center><p style="margin-top:10px; text-align: center; margin-top: 5%;">Welcome Farmer </p><center>
-    <h1>Pending Orders</h1>
+    <h1>Approved Orders</h1>
+    <hr style="margin-top: 20px;">
   <?php
         // connect to the database
         $con = mysqli_connect("localhost", "root", "", "farmer");
@@ -285,7 +286,7 @@ color: #f05462;
         }
 
         // get the pending orders for the current user using prepared statement
-        $query = "SELECT * FROM `order` WHERE username=? AND status='rejected'";
+        $query = "SELECT * FROM `order` WHERE username=? AND status='approved'";
         $stmt = mysqli_prepare($con, $query);
         mysqli_stmt_bind_param($stmt, "s", $_SESSION['username']);
         mysqli_stmt_execute($stmt);
@@ -305,11 +306,13 @@ color: #f05462;
                 echo "<td>" . $row['order_id'] . "</td>";
                 echo "<td>" . $row['username'] . "</td>";
                 echo "<td>" . $row['price'] . "</td>";
+
                 echo "</tr>";
+                
             }
             echo "</table>";
         } else {
-            echo "You have no pending orders.";
+            echo "You have no approved orders.";
         }
 
         // close the database connection

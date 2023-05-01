@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 include('db.php');
@@ -148,7 +149,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-    background: green;
+    background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -186,7 +187,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: green;
+     background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -444,7 +445,7 @@ width: 100%;
     
 
   <div class="header">
-    <li><a href="admin.php" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
+    <li><a href="#" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
     <div class="nav">
     <div class="search">
 <input type="text" placehold="search">
@@ -468,7 +469,7 @@ if(!empty($_SESSION["shopping_cart"])) {
 $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 ?>
 <div class="cart_div">
-<a href="cart.php"><img src="cart-icon.png" /> Cart<span>
+<a href="cart.php"><img src="image/logo.jpg" width="25px" /> View Your Order Here<span>
 <?php echo $cart_count; ?></span></a>
 </div>
 <?php
@@ -476,9 +477,8 @@ $cart_count = count(array_keys($_SESSION["shopping_cart"]));
 ?>
 <!-- display the search form and the table of users -->
 <form action="" method="GET">
-  <label for="search-input">Search:</label>
-  <input type="text" id="search-input" name="search">
-  <button type="submit">Search</button>
+  <h3 style="background-color: gold;">Place Order</h3>
+  <hr>
 
 <?php
 $result = mysqli_query($con,"SELECT * FROM `products`");
@@ -502,12 +502,12 @@ mysqli_close($con);
 <div class="message_box" style="margin:10px 0px;">
 <?php echo $status; ?>
 </div>
+
+
 </body>
  <footer>
     &copy;<em id="date"></em>Paul Owuor De Developer
 </footer>
 </html>
 
- 
- 
 

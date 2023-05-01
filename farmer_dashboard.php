@@ -64,7 +64,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-    background: darkgreen;
+    background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -102,7 +102,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: darkgreen;
+    background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -221,6 +221,9 @@ color: #f05462;
             
             <li><a href="shop/index.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>Place order for the product</span></li>
              <li><a href="pendingorder.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>View Pending Order</a></span></li>
+            
+             </li>
+             <li><a href="approved_orders.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>View Approved Order</a></span></li>
             
              </li>
             <li><a href="#" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>Help</a></span></li>

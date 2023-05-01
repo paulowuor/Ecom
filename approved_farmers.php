@@ -306,24 +306,21 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-// Retrieve all the pending orders
-$sql = "SELECT * FROM `order`";
+// Retrieve all the approved orders
+$sql = "SELECT * FROM `order` WHERE status='approved'";
 $result = $con->query($sql) or die(mysqli_error($con));
 
 if ($result->num_rows > 0) {
     echo "<table border='1'>";
-    echo "<tr><th>Order ID</th><th>User ID</th><th>Product ID</th><th>Total Cost(Ksh.)</th><th>Status</th></tr>";
+    echo "<tr><th>Order ID</th><th>User ID</th><th>Total Cost(Ksh.)</th><th>Status</th></tr>";
     while($row = $result->fetch_assoc()) {
         echo "<tr>
               <td>" . $row["order_id"] . "</td>
               <td>" . $row["username"] . "</td>
-              <td>" . $row["id"] . "</td>
+              
               <td>" . $row["price"] . "</td>
               <td>";
                   if($row['status']==0){
-                    echo'<a href="Approved.php?order_id='.$row["order_id"].'">Approve</a>|<a href="reject.php?order_id='.$row["order_id"].'">Decline</a>';
-                  }
-                  else{
                     echo 'approved';
                   }
               echo '</td>';

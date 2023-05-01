@@ -86,7 +86,7 @@ h2{
 }
 .side-menu{
     position: fixed;
-    background: green;
+    background: #4CAF50;
     width: 20vw;
     min-height: 100vh;
     display: flex;
@@ -124,7 +124,7 @@ color: #f05462;
     right: 0;
     width: 80vw;
     height: 10vh;
-    background: green;
+   background: #4CAF50;
     display: flex;
     align-items: center;
     width: 100%;
@@ -408,7 +408,7 @@ width: 100%;
     
 
   <div class="header">
-    <li><a href="admin.php" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
+    <li><a href="#" style="text-decoration: none;"><img src="image/logo.JPG" style="width: 30px; height: 30px; margin: 2px;"><span style="color: gold;">Admin Dashboard</a></span></li>
     <div class="nav">
     <div class="search">
  <?php
@@ -427,9 +427,8 @@ width: 100%;
   </div>
 </div>
 <div class="cover"></div>
- <h1>Farmer Lending Platform</h1>
+<h1>Farmer Lending Platform</h1>
 <center><p style="margin-top:10px; text-align: center; margin-top: 5%;">Welcome Farmer</p><center>
- 
 <html>
 <head>
   <meta charset="utf-8">
@@ -444,7 +443,7 @@ width: 100%;
 </style>
 <body>
   
-  <h2>Place Order Now</h2>
+  <h3 style="background-color: gold;">Place Order Now</h3>
   <hr>
 <div class="cart">
 <?php
@@ -473,7 +472,7 @@ foreach ($_SESSION["shopping_cart"] as $product){
 <form method='post' action=''>
 <input type='hidden' name='code' value="<?php echo $product["code"]; ?>" />
 <input type='hidden' name='action' value="remove" />
-<button type='submit' class="remove" style="background-color: gold;">Remove this item</button>
+<button type='submit' class="remove" style="background-color: skyblue;" >Remove this item</button>
 </form>
 </td>
 <td>
@@ -538,7 +537,15 @@ $interest= $total_price*1.09;
   <button type="submit" class="submit-btn">Submit order</button>
 </form>
 <br>
-<a href="index.php">Go Back</a>
+<h3 style="background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  width: 200px;
+  height: 60px;
+  cursor: pointer"><a href="index.php">Back To Add More</a></h3>
 
     
 <footer>
