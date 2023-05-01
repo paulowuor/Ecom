@@ -57,7 +57,22 @@ function send_email($email_address=''){
                           "From"=> "oowuor20@student.kibu.ac.ke",
                           "To"=> $email_address,
                           "Subject"=> "Order Approval",
-                          "HtmlBody"=> "<strong>Hello We are Paul De Developer company:</strong> Hello our customer it's planting season. Please Hurry up to do planting as early as possible .",
+                          "HtmlBody"=> " Dear Farmers,
+                          <br>
+
+We hope this message finds you well. We are writing to notify you about two important updates regarding our company, Paul De Developer Company.
+
+First, as you know, our mission is to provide innovative solutions to help farmers improve their productivity and livelihoods. We are proud to have you as our valued customers and partners in achieving this mission. We wanted to inform you that we have recently implemented new technology and tools to enhance our services and streamline our operations. These changes will allow us to better serve you and meet your evolving needs as farmers.
+
+Secondly, we want to remind you that it is currently planting season. We encourage you to take advantage of this time to prepare your land and start planting your crops. Our team is here to support you every step of the way, from providing high-quality seeds and fertilizers to offering expert advice on crop management.
+
+We are committed to continuing to provide the highest level of service and support to all of our customers, and we believe these updates will help us achieve this goal.
+
+Thank you for your continued trust in Paul De Developer Company. We look forward to working with you to achieve our shared vision for a sustainable and thriving agricultural sector.
+
+Best regards,
+Owuor Paul
+Paul De Developer Company",
                           "MessageStream"=> "notifications"
                       
                   ));

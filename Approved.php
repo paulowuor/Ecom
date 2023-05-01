@@ -57,7 +57,19 @@ function send_email($email_address=''){
                           "From"=> "oowuor20@student.kibu.ac.ke",
                           "To"=> $email_address,
                           "Subject"=> "Order Approval",
-                          "HtmlBody"=> "<strong>Hello We are Paul De Developer company:</strong> We have approved your order.",
+                          "HtmlBody"=> "<strong>Dear Farmer,
+<br>
+We are pleased to inform you that your recent order with Paul De Developer Company has been approved and is now being processed. We appreciate your business and are grateful for the opportunity to serve you.
+
+As you know, our company is committed to providing innovative solutions to help farmers like you improve their productivity and livelihoods. We take great pride in offering high-quality products and services to support your farming operations, and we believe that your recent order reflects this commitment.
+
+If you have any questions or concerns about your order, please do not hesitate to contact us. Our team is always here to support you and ensure that your experience with Paul De Developer Company is a positive one.
+
+Thank you for choosing us as your agricultural partner. We look forward to continuing to work with you and helping you achieve your farming goals.
+
+Best regards,
+Owuor Paul
+Paul De Developer Company.",
                           "MessageStream"=> "notifications"
                       
                   ));
