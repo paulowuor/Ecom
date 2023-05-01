@@ -299,7 +299,7 @@ button:hover {
 </div>
 <div class="cover"></div>
  <h1>Farmer Lending Platform</h1>
-<center><p style="margin-top:10px; text-align: center; margin-top: 5%;">Approve Orders</p><center>
+<center><p style="margin-top:10px; text-align: center; margin-top: 5%;">Notify farmers</p><center>
    <button type="print" ><a href="pdf.php"> download</a></button>
    <?php
 require('db.php');
@@ -308,22 +308,18 @@ if ($con->connect_error) {
     die("Connection failed: " . $con->connect_error);
 }
 
-// Retrieve all the pending orders
-$sql = "SELECT * FROM `order`";
+// Notify farmers about planting period
+$sql = "SELECT * FROM `farmers`";
 $result = $con->query($sql) or die(mysqli_error($con));
 
 if ($result->num_rows > 0) {
         echo "<table border='1'>";
-    echo "<tr><th>Order ID</th><th>Farmer username</th><th>Total Cost(Ksh.)</th><th>Action</th></tr>";
+    echo "<tr><th>User Email</th><th>Status</th></tr>";
     while($row = $result->fetch_assoc()) {
-        echo "<tr>
-              <td>" . $row["order_id"] . "</td>
-              <td>" . $row["username"] . "</td>
-              
-              <td>" . $row["price"] . "</td>
-              <td>
-                  <button class='approve-btn' id='approve-btn-" . $row["order_id"] . "' onclick='approveOrder(" . $row["order_id"]. ")'>Approve</button>
-                  <button class='reject-btn' onclick='rejectOrder(". $row["order_id"] .")'>Reject</button>
+        echo "<td>" . $row["email"] . "</td>
+             <td>
+                  <button class='approve-btn' id='approve-btn-" . $row["nationalID"] . "' onclick='approveOrder(" . $row["nationalID"]. ")'>Notify </button>
+                 
               </td>
               </tr>";
     }
@@ -338,17 +334,17 @@ $con->close();
 
 
 <script>
-function approveOrder(order_id) {
+function approveOrder(nationalID) {
   // Send an AJAX request to the server to update the order status
   $.ajax({
-    url: 'Approved.php',
+    url: 'notify.php',
     type: 'POST',
-    data: {order_id: order_id, status: 'approved'},
+    data: {nationalID: nationalID, status: 'notified'},
     success: function(response) {
       // Display a success message to the user
-      alert('Do you want to approve this order!');
+      alert('Do you want to notify farmers about planting season!');
       // Update the UI to reflect the new status of the order
-      $('#approve-btn-' + order_id).replaceWith('<span class="approved-text">Approved</span>');
+      $('#approve-btn-' + nationalID).replaceWith('<span class="approved-text">Notified</span>');
     },
     error: function() {
       // Display an error message to the user
@@ -358,27 +354,4 @@ function approveOrder(order_id) {
 }
 
 
-</script>
-<script>
-
-function rejectOrder(order_id) {
-  // Send an AJAX request to the server to update the order status
-  $.ajax({
-    url: 'reject.php',
-    type: 'POST',
-    data: {order_id: order_id, status: 'rejected'},
-    success: function(response) {
-      // Display a success message to the user
-      alert('Do you want to reject this order!');
-      // Update the UI to reflect the new status of the order
-      
-    $('#reject-btn-' + order_id).replaceWith('<span class="reject-text">rejected</span>');
-    },
-    error: function() {
-      // Display an error message to the user
-      alert('There was an error approving the order. Please try again later.');
-    }
-  });
-}
-   
 </script>

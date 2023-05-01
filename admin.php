@@ -230,6 +230,7 @@ color: #f05462;
              <li><a href="approved_farmers.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px;"><span>Approved Orders</a></span></li>
              </li>
             <li><a href="addproduct.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>Add Product</a></span></li>
+            <li><a href="Notify_farmers.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>Send Notifications</a></span></li>
               <li><a href="admin.php" style="text-decoration: none;"><img src="avatar.PNG" style="width: 30px; height: 30px; margin: 2px"><span>Home</a></span></li>
           </ul>
         </div>

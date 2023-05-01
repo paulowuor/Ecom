@@ -323,7 +323,7 @@ if ($result->num_rows > 0) {
               <td>" . $row["price"] . "</td>
               <td>
                   <button class='approve-btn' id='approve-btn-" . $row["order_id"] . "' onclick='approveOrder(" . $row["order_id"]. ")'>Approve</button>
-                  <button class='reject-btn' onclick='rejectOrder(". $row["order_id"] .")'>Reject</button>
+                 
               </td>
               </tr>";
     }
@@ -341,12 +341,12 @@ $con->close();
 function approveOrder(order_id) {
   // Send an AJAX request to the server to update the order status
   $.ajax({
-    url: 'Approved.php',
+    url: 'notify.php',
     type: 'POST',
     data: {order_id: order_id, status: 'approved'},
     success: function(response) {
       // Display a success message to the user
-      alert('Do you want to approve this order!');
+      alert('Do you want to notify farmers about planting season!');
       // Update the UI to reflect the new status of the order
       $('#approve-btn-' + order_id).replaceWith('<span class="approved-text">Approved</span>');
     },
@@ -358,27 +358,4 @@ function approveOrder(order_id) {
 }
 
 
-</script>
-<script>
-
-function rejectOrder(order_id) {
-  // Send an AJAX request to the server to update the order status
-  $.ajax({
-    url: 'reject.php',
-    type: 'POST',
-    data: {order_id: order_id, status: 'rejected'},
-    success: function(response) {
-      // Display a success message to the user
-      alert('Do you want to reject this order!');
-      // Update the UI to reflect the new status of the order
-      
-    $('#reject-btn-' + order_id).replaceWith('<span class="reject-text">rejected</span>');
-    },
-    error: function() {
-      // Display an error message to the user
-      alert('There was an error approving the order. Please try again later.');
-    }
-  });
-}
-   
 </script>
